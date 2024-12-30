@@ -268,6 +268,10 @@ impl Behaviour {
         }
     }
 
+    pub fn num_ttl_reservations(&self) -> usize { self.reservations.values().map(|v| v.len()).sum() }
+
+    pub fn num_ttl_circuits(&self) -> usize { self.circuits.len() }
+
     fn on_connection_closed(
         &mut self,
         ConnectionClosed {
